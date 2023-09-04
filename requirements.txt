@@ -7,4 +7,10 @@ botcity-maestro-sdk>=0.3.3,<1.0
 # botcity-crawler-plugin
 
 # Uncomment to use Pandas
-# pandas
+pandas
+
+# Lib responsável por realizar o download automático do Driver do Chrome
+webdriver_manager
+
+# programa para abrir arquivos XLSX
+openpyxl
