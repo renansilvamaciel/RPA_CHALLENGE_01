@@ -14,7 +14,7 @@ def escolher_desafio(bot: WebBot, nome_desafio):
         bot.find_element("", By.XPATH).click()
 
     except Exception as error:
-        raise
+        raise ValueError(error)
 
 
 def abrir_site_rpa_challenge(bot: WebBot):
@@ -23,6 +23,8 @@ def abrir_site_rpa_challenge(bot: WebBot):
         # instala a versão do software mais recente
         bot.driver_path = ChromeDriverManager().install()
 
+        # TODO: colocar para poder escolher a pasta onde vai baixar os arquivos.
+
         # Abre o navegador e acessa o Tasy
         bot.browse("https://rpachallenge.com/")
 
@@ -30,7 +32,7 @@ def abrir_site_rpa_challenge(bot: WebBot):
         bot.maximize_window()
 
     except Exception as error:
-        print(error)
+        raise ValueError(error)
 
 
 def ler_arquivo(caminho_arquivo: str) -> pd.DataFrame:
@@ -42,4 +44,4 @@ def ler_arquivo(caminho_arquivo: str) -> pd.DataFrame:
         return dados_excel
 
     except Exception as error:
-        print(error)
+        raise ValueError(error)

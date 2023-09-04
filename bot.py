@@ -41,3 +41,7 @@ def main():
     finally:
         # Fecha o navegador
         bot.stop_browser()
+
+
+if __name__ == '__main__':
+    main()
