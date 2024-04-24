@@ -1,34 +1,36 @@
-from input_forms import *
-
+from botcity.web.bot import WebBot
+import input_forms as forms
 
 # DOCUMENTAÇÃO:
-    # ABRIR O SITE  - FUNC
-    # CLICAR EM START
-    # AGUARDAR O BOTÃO ROUND 1
-    # loop dentro do dataset para preencher os formulários:
-    # PREENCHER O FORMULARIO DENTRO DO SITE
-    # CLICAR SUBMIT
-    # AO FINAL DE 10 CADASTROS FINALIZAR O ROBO
+# ABRIR O SITE  - FUNC
+# CLICAR EM START
+# AGUARDAR O BOTÃO ROUND 1
+# loop dentro do dataset para preencher os formulários:
+# PREENCHER O FORMULARIO DENTRO DO SITE
+# CLICAR SUBMIT
+# AO FINAL DE 10 CADASTROS FINALIZAR O ROBO
 
 
 def main():
 
     # set variaveis
     bot = WebBot()
+
     nome_desafio = "Input Forms"
 
     try:
 
-        # LER ARQUIVO EXCEL
-        tabela = ler_arquivo("caminho do arquivo")
-
         # PASSO 1 - abrir o site
-        abrir_site_rpa_challenge(bot)
+        forms.abrir_site_rpa_challenge(bot)
 
-        # TODO: ESCOLHER O DESEAFIO:
-        escolher_desafio(bot, nome_desafio)
+        forms.escolher_desafio(bot, nome_desafio)
+
+        print('pausar')
+
+        # TODO: FAZER DOWNLOAD DA PLANILHA
 
         # TODO: CLICAR EM START
+
         # TODO: AGUARDAR O BOTÃO ROUND 1
 
         # TODO: PREENCHER OS 10 FOMS
