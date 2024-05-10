@@ -1,5 +1,6 @@
 from webdriver_manager.chrome import ChromeDriverManager
 from botcity.web import WebBot, By
+import pastas_arquivos
 import pandas as pd
 
 
@@ -68,6 +69,7 @@ def fazer_download_forms(bot: WebBot):
         bot.wait_for_downloads()
 
         # retornar o caminho do arquivo
+        # pastas_arquivos.aguardar_conclusao_download()
 
     except Exception as error:
         raise ValueError(error)
