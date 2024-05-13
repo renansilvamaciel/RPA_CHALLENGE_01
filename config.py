@@ -1,4 +1,4 @@
-# Classo criada para guardar todas as variaveis globais e configurações do projeto
+import os
 
 
-diretorio_download = ''
+diretorio_download = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'Downloads')

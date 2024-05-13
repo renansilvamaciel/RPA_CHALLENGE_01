@@ -1,8 +1,8 @@
 
 # CLASSE DEDICADA AO TRATAMENTO DE PASTAS E ARQUIVOS
-
-
+import shutil as sh
 import config
+import os
 
 
 def aguardar_conclusao_download(bot, extensao_arquivo: str = '.pdf', timeout: int = 30000) -> str:
@@ -33,6 +33,23 @@ def aguardar_conclusao_download(bot, extensao_arquivo: str = '.pdf', timeout: in
         dir_arquivo = bot.get_last_created_file(path=config.diretorio_download)
 
         return dir_arquivo  # Retorna o caminho completo do arquivo.
+
+    except Exception as error:
+        print(error)
+        raise ValueError(error)
+
+
+def nova_pasta(caminho_pasta: str, substituir_pasta: bool = False) -> None:
+    """
+    Cria uma nova pasta no diretório de informado por parâmetro.
+
+    :param caminho_pasta: Caminho da nova pasta
+    :param substituir_pasta: Se True, substitui a pasta caso ela exista
+    """
+    try:
+        if substituir_pasta:
+            sh.rmtree(path=caminho_pasta, ignore_errors=True)
+        os.makedirs(caminho_pasta,  exist_ok=True)
 
     except Exception as error:
         print(error)
